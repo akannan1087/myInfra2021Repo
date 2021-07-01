@@ -4,9 +4,9 @@ provider "aws" {
 
 
 #Create security group with firewall rules
-resource "aws_security_group" "security_jenkins_group" {
+resource "aws_security_group" "my_security_group" {
   name        = var.security_group
-  description = "security group for jenkins"
+  description = "security group for Ec2 instance"
 
   ingress {
     from_port   = 8080
@@ -41,7 +41,7 @@ resource "aws_instance" "myFirstInstance" {
   instance_type = var.instance_type
   security_groups= [var.security_group]
   tags= {
-    Name = "jenkins_instance"
+    Name = var.tag_name
   }
 }
 
@@ -50,6 +50,6 @@ resource "aws_eip" "myFirstInstance" {
   vpc      = true
   instance = aws_instance.myFirstInstance.id
 tags= {
-    Name = "jenkins_elstic_ip"
+    Name = "my_elastic_ip"
   }
 }
