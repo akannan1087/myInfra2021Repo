@@ -36,7 +36,7 @@ resource "aws_security_group" "my_security_group" {
 }
 
 resource "aws_instance" "myFirstInstance" {
-  ami           = "ami-0b9064170e32bde34"
+  ami           = var.ami_id
   key_name = var.key_name
   instance_type = var.instance_type
   security_groups= [var.security_group]
