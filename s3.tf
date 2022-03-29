@@ -4,12 +4,12 @@ resource "aws_s3_bucket" "kmkm" {
 
 resource "aws_s3_bucket_acl" "kmkm" {
   bucket = aws_s3_bucket.kmkm.id
-  acl    = "private"
+  acl    = var.acl
 }
 
 resource "aws_s3_bucket_versioning" "versioning_kmkm" {
   bucket = aws_s3_bucket.kmkm.id
   versioning_configuration {
-    status = "Enabled"
+    status = var.versioning_configuration
   }
 }
