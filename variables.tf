@@ -5,7 +5,7 @@ variable "aws_region" {
 
 variable "key_name" { 
     description = " SSH keys to connect to ec2 instance" 
-    default     =  "myJune2021Key" 
+    default     =  "myEc2Jenkinskey" 
 }
 
 variable "instance_type" { 
@@ -24,12 +24,12 @@ variable "tag_name" {
 } 
 variable "ami_id" { 
     description = "AMI for Ubuntu Ec2 instance" 
-    default     = "ami-020db2c14939a8efb" 
+    default     = "ami-0fb653ca2d3203ac1" 
 }
-variable "versioning" {
-    type        = bool
+variable "versioning_configuration" {
+    type        = string
     description = "(Optional) A state of versioning."
-    default     = true
+    default     = "Enabled"
 }
 variable "acl" {
     type        = string
