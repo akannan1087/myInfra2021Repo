@@ -1,14 +1,14 @@
-resource "aws_s3_bucket" "example" {
-  bucket = "example-bucket"
+resource "aws_s3_bucket" "kmkm" {
+  bucket = "kmkm-bucket"
 }
 
-resource "aws_s3_bucket_acl" "example" {
-  bucket = aws_s3_bucket.example.id
+resource "aws_s3_bucket_acl" "kmkm" {
+  bucket = aws_s3_bucket.kmkm.id
   acl    = "private"
 }
 
-resource "aws_s3_bucket_versioning" "versioning_example" {
-  bucket = aws_s3_bucket.example.id
+resource "aws_s3_bucket_versioning" "versioning_kmkm" {
+  bucket = aws_s3_bucket.kmkm.id
   versioning_configuration {
     status = "Enabled"
   }
