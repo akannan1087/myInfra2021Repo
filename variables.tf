@@ -29,7 +29,7 @@ variable "ami_id" {
 variable "versioning_configuration" {
     type        = string
     description = "(Optional) A state of versioning."
-    default     = "enabled"
+    default     = "Enabled"
 }
 variable "acl" {
     type        = string
