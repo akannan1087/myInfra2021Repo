@@ -26,10 +26,10 @@ variable "ami_id" {
     description = "AMI for Ubuntu Ec2 instance" 
     default     = "ami-0fb653ca2d3203ac1" 
 }
-variable "versioning" {
-    type        = bool
+variable "versioning_configuration" {
+    type        = string
     description = "(Optional) A state of versioning."
-    default     = false
+    default     = enabled
 }
 variable "acl" {
     type        = string
