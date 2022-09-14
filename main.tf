@@ -2,10 +2,19 @@ provider "aws" {
   region = var.aws_region
 }
 
+resource "aws_vpc" "main" {
+  cidr_block = "172.16.0.0/16"
+  instance_tenancy = "default"
+  tags = {
+    Name = "main"
+  }
+}
+
 #Create security group with firewall rules
 resource "aws_security_group" "my_security_group" {
   name        = var.security_group
   description = "security group for Ec2 instance"
+  vpc_id = aws_vpc.main.id
 
   ingress {
     from_port   = 8080
@@ -38,7 +47,6 @@ resource "aws_instance" "myFirstInstance" {
   ami           = var.ami_id
   key_name = var.key_name
   instance_type = var.instance_type
-  security_groups= [var.security_group]
   tags= {
     Name = var.tag_name
   }
