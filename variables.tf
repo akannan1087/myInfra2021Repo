@@ -5,7 +5,7 @@ variable "aws_region" {
 
 variable "key_name" { 
     description = " SSH keys to connect to ec2 instance" 
-    default     =  "MyJenkinsEC2key"
+    default     =  "MyJenkinsEC2key" 
 }
 
 variable "instance_type" { 
@@ -22,33 +22,25 @@ variable "tag_name" {
     description = "Tag Name of for Ec2 instance" 
     default     = "my-ec2-instance" 
 } 
-
 variable "ami_id" { 
     description = "AMI for Ubuntu Ec2 instance" 
-<<<<<<< HEAD
     default     = "ami-0ee23bfc74a881de5" 
-=======
-    default     = "ami-0ee23bfc74a881de5"
 }
-
 variable "versioning" {
     type        = bool
     description = "(Optional) A state of versioning."
     default     = true
 }
-
 variable "acl" {
     type        = string
     description = " Defaults to private "
     default     = "private"
 }
-
 variable "bucket_prefix" {
     type        = string
     description = "(required since we are not using 'bucket') Creates a unique bucket name beginning with the specified prefix"
     default     = "my-s3bucket-"
 }
-
 variable "tags" {
     type        = map
     description = "(Optional) A mapping of tags to assign to the bucket."
@@ -56,5 +48,4 @@ variable "tags" {
         environment = "DEV"
         terraform   = "true"
     }
->>>>>>> 47c5f267d198636d9665fe03fb3d8a0e7fd3668b
 }
