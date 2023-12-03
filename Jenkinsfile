@@ -4,6 +4,7 @@ pipeline {
     stages {
         stage('Checkout') {
             steps {
+                checkout scmGit(branches: [[name: '*/master']], extensions: [], userRemoteConfigs: [[url: 'https://github.com/vokengg/myInfra2021Repo/edit/master/Jenkinsfile']])
                 checkout scm
             }
         }
