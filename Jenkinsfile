@@ -16,14 +16,14 @@ pipeline {
         
         stage ("plan") {
             steps {
-                sh ('terraform plan') 
+                sh ('terraform plan -lock=false') 
             }
         }
 
         stage (" Action") {
             steps {
                 echo "Terraform action is --> ${action}"
-                sh ('terraform ${action} --auto-approve') 
+                sh ('terraform ${action} ') 
            }
         }
     }
